@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 
-import { depositType } from "../Protocols/depositType.js";
+
 import { select } from "../Repository/selectRepository.js";
 
 export async function getValues(req: Request, res: Response): Promise<void>{

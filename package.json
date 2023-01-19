@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/igorhnovais/Poc-TypeScript#readme",
   "dependencies": {
+    "@types/pg": "^8.6.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

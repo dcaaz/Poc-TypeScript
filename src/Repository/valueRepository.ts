@@ -1,7 +1,7 @@
 import { Deposit } from "../Protocols/depositType.js";
 import {connection} from "../Database/db.js"
 
-export async function insertBank(info: Deposit): Promise<void>{
+export async function insertBank(info: Deposit){
 
     try{
 
