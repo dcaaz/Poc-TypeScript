@@ -11,7 +11,7 @@ export async function idValidation(req: Request, res: Response, next: NextFuncti
         const check = await checkService(id)
 
        if(!check){
-        res.sendStatus(401)
+        return res.sendStatus(404)
        }
 
        next()

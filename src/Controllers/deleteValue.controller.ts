@@ -3,7 +3,6 @@ import { Request, Response } from "express"
 import { deleteValueOne } from "../Repository/deleteServiceRepository.js";
 
 
-
 export async function deleteValue(req: Request, res: Response): Promise<void>{
 
     const id: number = Number(req.params.id); 
@@ -11,7 +10,7 @@ export async function deleteValue(req: Request, res: Response): Promise<void>{
     try{
 
         await deleteValueOne(id);
-        
+
         res.sendStatus(204)
 
     } catch (err){
