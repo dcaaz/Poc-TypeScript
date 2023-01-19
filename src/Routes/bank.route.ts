@@ -7,6 +7,7 @@ import { getValues } from "../Controllers/getValues.controller.js";
 import { idValidation } from "../Middleware/idValidation.middleware.js";
 import { deleteValue } from "../Controllers/deleteValue.controller.js";
 import { putValue } from "../Controllers/putValue.controller.js";
+import { getTotal } from "../Controllers/getTotal.controller.js";
 
 const router = Router();
 
@@ -14,7 +15,8 @@ const router = Router();
 router.post("/insert-value", joiValidation, postValue);
 router.get("/balance", getValues);
 router.delete("/delete-value/:id", idValidation, deleteValue);
-router.put("/update/:id", idValidation, putValue )
+router.put("/update/:id", idValidation, putValue);
+router.get("/total", getTotal)
 
 
 export default router;
