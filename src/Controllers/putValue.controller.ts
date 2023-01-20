@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { valueType } from "../Protocols/depositType.js";
-import { putOne } from "../Repository/putOneRepository.js";
+import { putValueService } from "../Services/putValueService.js";
 
 
 
@@ -12,7 +12,7 @@ export async function putValue(req: Request, res: Response){
 
     try{
 
-        await putOne(id, value)
+        await putValueService(id, value)
 
         res.status(200).send('updated');
 

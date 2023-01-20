@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
+import { selectOne } from "../Repository/selectOneRepository.js";
 
-import { checkService } from "../Services/deleteService.js";
 
 export async function idValidation(req: Request, res: Response, next: NextFunction){
 
@@ -8,11 +8,13 @@ export async function idValidation(req: Request, res: Response, next: NextFuncti
 
     try{
 
-        const check = await checkService(id)
+        const check = await selectOne(id)
+       
+        if(check.rowCount === 0){  
 
-       if(!check){
-        return res.sendStatus(404)
-       }
+            res.sendStatus(404);
+            return 
+        }
 
        next()
 

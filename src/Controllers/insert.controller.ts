@@ -6,7 +6,7 @@ import { insertValue } from "../Services/insertService.js";
 
 export async function postValue(req: Request, res: Response): Promise<void>{
 
-    const info: Deposit = req.body
+    const info = req.body as Deposit
 
     try{
 

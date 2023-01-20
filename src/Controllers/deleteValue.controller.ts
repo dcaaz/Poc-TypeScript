@@ -11,7 +11,7 @@ export async function deleteValue(req: Request, res: Response): Promise<void>{
 
         await deleteValueOne(id);
 
-        res.status(204).send("deleted");
+        res.sendStatus(204);
 
     } catch (err){
 

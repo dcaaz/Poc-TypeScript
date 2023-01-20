@@ -1,12 +1,12 @@
 import { Request, Response } from "express"
+import { getAll } from "../Services/getAllValuesService.js";
 
-import { getValuesTotal } from "../Repository/getTotalRepository.js";
 
 export async function getTotal(req:Request, res: Response): Promise<void>{
 
     try{
 
-        const total = await getValuesTotal();
+        const total = await getAll()
 
         res.status(200).send(total.rows[0]);
 

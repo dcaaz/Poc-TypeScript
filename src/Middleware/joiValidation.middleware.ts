@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from "express"
-
+import { Deposit } from "../Protocols/depositType.js";
 
 import { insertSchema } from "../Models/insert.models.js"
 
-export async function joiValidation(req: Request, res: Response, next: NextFunction){
+export async function joiValidation(req: Request, res: Response, next: NextFunction): Promise<void>{
 
-    const datas: string | number = req.body ;
+    const datas = req.body as Deposit ;
     
     try{
 
@@ -13,7 +13,8 @@ export async function joiValidation(req: Request, res: Response, next: NextFunct
 
         if (error){
             const erros = error.details.map(detail => detail.message);
-            return res.status(422).send(erros);
+            res.status(422).send(erros);
+            return;
         }
 
         next()

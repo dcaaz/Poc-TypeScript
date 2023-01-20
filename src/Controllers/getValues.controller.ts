@@ -1,13 +1,13 @@
 import { Request, Response } from "express"
-import { select } from "../Repository/selectRepository.js";
+import { getValueService } from "../Services/getValuesService.js";
 
 export async function getValues(req: Request, res: Response): Promise<void>{
 
     try{
 
-        const balances = await select()
+        const balances = await getValueService()
 
-        res.status(200).send(balances.rows)
+        res.status(200).send(balances.rows);
 
     } catch (err){
 

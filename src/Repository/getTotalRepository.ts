@@ -8,7 +8,4 @@ export async function getValuesTotal(): Promise<QueryResult<valueType>>{
     SELECT sum(data.value) as value_total from data
     `)
 
-
-
-
 }
