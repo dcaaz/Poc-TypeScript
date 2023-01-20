@@ -3,6 +3,10 @@ export type depositType = {
     name: string,
     value: number,
     day: number | Date
-}
+};
 
-export type Deposit = Omit<depositType, "id" | "day">
+export type Deposit = Omit<depositType, "id" | "day">;
+
+export type valueType = {
+    value: number
+};

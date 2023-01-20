@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-
+import { valueType } from "../Protocols/depositType.js";
 import { putOne } from "../Repository/putOneRepository.js";
 
 
@@ -7,14 +7,14 @@ import { putOne } from "../Repository/putOneRepository.js";
 export async function putValue(req: Request, res: Response){
 
     const id: number = Number(req.params.id); 
-    const {value} = req.body;
+    const {value} = req.body as valueType;
    
 
     try{
 
         await putOne(id, value)
 
-        res.sendStatus(200)
+        res.status(200).send('updated');
 
     } catch (err){
 

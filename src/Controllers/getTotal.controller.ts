@@ -2,7 +2,7 @@ import { Request, Response } from "express"
 
 import { getValuesTotal } from "../Repository/getTotalRepository.js";
 
-export async function getTotal(req:Request, res: Response){
+export async function getTotal(req:Request, res: Response): Promise<void>{
 
     try{
 

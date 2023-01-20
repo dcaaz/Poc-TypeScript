@@ -1,9 +1,9 @@
-import { Request, Response } from "express"
+import { Request, Response, NextFunction } from "express"
 
 
 import { insertSchema } from "../Models/insert.models.js"
 
-export async function joiValidation(req: Request, res: Response, next){
+export async function joiValidation(req: Request, res: Response, next: NextFunction){
 
     const datas: string | number = req.body ;
     

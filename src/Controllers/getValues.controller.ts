@@ -1,6 +1,4 @@
 import { Request, Response } from "express"
-
-
 import { select } from "../Repository/selectRepository.js";
 
 export async function getValues(req: Request, res: Response): Promise<void>{
