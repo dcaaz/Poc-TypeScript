@@ -5,7 +5,9 @@ import { valueType } from "../Protocols/depositType.js"
 export async function getValuesTotal(): Promise<QueryResult<valueType>>{
 
     return await connection.query(`
-    SELECT sum(data.value) as value_total from data
+    SELECT 
+    COALESCE(sum(data.value), 0):: INTEGER as value_total 
+    from data
     `)
 
 }
